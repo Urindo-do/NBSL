@@ -88,7 +88,13 @@
   - **최대 용량**에서는 스크루가 뒤로 가장 많이 빠져 있어 스프링 압축이 **가장 작은** 상태다.
   - 그래서 최대 용량으로 두면 스프링이 오래 눌린 채 피로가 쌓이는 것을 줄일 수 있다.
   - 다만 조립 상태에서도 스프링에는 기본 압축(예압)이 걸려 있으므로, "완전히 힘이 없는 상태"가 아니라 "압축이 가장 적은 상태"라고 쓰는 것이 정확하다.
-- `[보충]` "보관할 때 최대 용량으로 둔다"는 여러 제조사·판매사 가이드에 나오는 관행이다. 다만 실제 정확도에 미치는 영향이 얼마나 되는지는 연구자들 사이에 의견이 갈린다. 보고서에는 수업 설명을 주로 쓰고, 이견이 있다는 점은 고찰에 한 줄 정도 적는 편이 안전하다. (출처: Microlit, Camlab 보관 가이드, ResearchGate 토론)
+- `[보충]` 외부 자료를 확인한 결과:
+  - **최대 용량 보관을 권장:** INTEGRA(피펫 제조사)와 Camlab(판매사)의 가이드. 이유는 "이 위치에서 스프링이 가장 덜 눌린(least stressed) 상태"이기 때문이다. 수업 설명과 같다.
+  - **이번 실습 피펫의 매뉴얼:** Eppendorf Research plus 매뉴얼에는 보관 시 용량 설정에 대한 지시가 **없다**. 보관 위치(거치대, 벽걸이, 수평)만 적혀 있다.
+  - **반대로 권장하는 곳도 있다:** Microlit(다른 피펫 제조사)은 "스프링 장력을 풀기 위해 **최소** 용량으로 두라"고 한다. 용량 조절 구조가 제조사마다 달라서 그런 것으로 보인다(추정).
+  - **효과에 대한 이견:** 연구자 토론에서는 "요즘 피펫에는 꼭 필요하지 않다"는 의견도 많다.
+  - 따라서 보고서에는 **"이 실험실의 지침(수업)은 최대 용량으로 되돌리는 것이며, 스프링이 가장 덜 눌린 상태로 두기 위해서다"** 라고 쓴다. 그리고 제조사마다 권장이 다를 수 있다는 점을 고찰에 한 줄 적는다.
+  - (출처: INTEGRA *How to clean pipettes*, Camlab *How should I store my micropipettes?*, Eppendorf *Research plus Operating manual*, Microlit *Extend your pipette's lifespan*, ResearchGate 토론)
 
 **원리 심화** `[보충]`
 - **공기 치환(air displacement) 방식:** 버튼을 누르면 피스톤이 내려가 실린더 안의 공기를 밀어낸다. 버튼을 놓으면 피스톤이 올라가면서 공기층(air cushion)이 늘어나고, 그만큼 압력이 낮아져 액체가 팁 안으로 들어온다. 액체가 피스톤에 직접 닿지 않고 **공기층을 사이에 둔다**는 점이 핵심이다. 그래서 팁만 갈아 끼우면 시료끼리 섞이지 않는다.
@@ -325,7 +331,7 @@
 **③ 탈포는 압력·부력·점도가 함께 작용한 결과다.** 진공을 걸면 보일의 법칙에 따라 기포가 커진다. 커진 기포는 부력이 커져 표면으로 떠오르고, 표면에서 터진다. PDMS처럼 점도가 높은 액체는 대기압에서는 작은 기포가 거의 떠오르지 못한다. 그래서 감압으로 기포를 키워 떠오르는 속도를 높이는 과정이 필요하다(스토크스 법칙). 기포가 남으면 경화 후 표면이 울퉁불퉁해지고 투명도가 떨어진다. 이것은 다음 회차 PDMS 구조물의 품질과 바로 이어진다.
 
 **④ 한계와 이견.**
-- "피펫을 최대 용량으로 보관"하는 효과의 크기는 연구자들 사이에 의견이 갈린다.
+- "피펫을 최대 용량으로 보관"하는 것은 이 실험실의 지침이고, INTEGRA 등 여러 가이드도 같은 이유로 권장한다. 다만 제조사마다 권장이 다르고(최소 용량을 권하는 곳도 있음), 효과의 크기에도 이견이 있다.
 - 이번 회차에는 pH 측정값 화면과 탈포 전·후 사진을 기록하지 못했다.
 - 다음 회차에는 측정값을 표로 남겨 결과를 정량적으로 비교할 계획이다.
 
@@ -361,7 +367,8 @@
 - USGS, *Field Measurements: pH (A6.4)* — https://pubs.usgs.gov/twri/twri9a6/twri9a64/twri9a_6.4_ver2.0.pdf
 - Atlas Scientific, *What is pH slope* — https://atlas-scientific.com/blog/ph-slope/
 - Dow, *SYLGARD 184 Silicone Elastomer — Technical Data Sheet* — https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html
-- Microlit, *Learn how to extend your pipette's lifespan* — https://www.microlit.us/learn-how-to-extend-your-pipettes-lifespan/
-- Camlab, *How should I store my micropipettes?* — https://www.camlab.co.uk/blog/how-should-i-store-my-micropipettes
+- Microlit, *Learn how to extend your pipette's lifespan* (최소 용량 보관 권장 — 반대 의견 출처) — https://www.microlit.us/learn-how-to-extend-your-pipettes-lifespan/
+- Camlab, *How should I store my micropipettes?* — https://camblab.info/how-should-i-store-my-micropipettes/
+- INTEGRA Biosciences, *How to clean pipettes (incl. storage tips)* — https://www.integra-biosciences.com/global/en/blog/article/how-clean-pipettes
 - Wikipedia, *Ball valve* — https://en.wikipedia.org/wiki/Ball_valve
 - Lab Manager, *Degassing high-viscosity epoxies using lab vacuum pumps* — https://www.labmanager.com/degassing-high-viscosity-epoxies-using-lab-vacuum-pumps-35188
