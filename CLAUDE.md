@@ -7,11 +7,14 @@
 - `labs/NN_YYYY-MM-DD_주제/README.md` — 회차별 실습 기록 초안 (`templates/report-template.md`를 복사해서 시작)
 - `labs/NN_.../images/` — 그 회차 이미지. 이름: `NN_장비_장면.jpg` (예: `01_pipette_tip.jpg`)
 - `templates/` — 틀
+- `labs/NN_.../report/` — 제출 보고서: `content.js`(본문), `figures/`(원리 그림 + `figs.py`), 생성된 `.docx`·미리보기 `.pdf`
+- `tools/report-builder/` — 보고서 생성(`build.js`)·검증(`check.py`) 도구. 사용법은 그 폴더 README
 
 ## 저장소에 올리지 않는 것 (공개 저장소)
 - 녹음·영상 원본 (`.gitignore` 처리됨) → PC/드라이브에 보관
 - 녹음 전사본 원문 — 다른 학생 이름·대화가 들어 있음. 정리된 초안만 올린다
 - 다른 학생 얼굴이 나온 사진 → 가리거나 빼기
+- 표지에 이름·학번을 채운 `.hwp` 제출본 → 저장소에 올리지 않는다 (docx는 빈칸 상태로만 올림)
 
 ## 이미지 규칙
 - 가로 1280px 이하, JPG
