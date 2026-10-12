@@ -5,3 +5,8 @@
 *.mp3
 *.wav
 raw/
+
+# 조원 이름이 들어간 표지 정보와 제출본 (tools/report-builder/fill_cover.py)
+*.local.json
+*_표지완성.docx
+*.hwp

@@ -60,3 +60,15 @@ python3 tools/report-builder/check.py out.pdf out.labels.json <참고문헌 수>
 - `photos` 블록은 `h`(사진 높이 cm)와 항목별 `sub`((a) 설명)를 받는다. 사진 줄과 캡션은 나뉘지 않는 칸 하나짜리 표에 들어가 쪽이 바뀌어도 같이 움직인다.
 - 목차 쪽 번호는 LibreOffice 미리보기 기준이다. 맑은 고딕 대신 대체 글꼴로 계산되므로 한글에서 열면 쪽이 1~2쪽 달라질 수 있다. 한글에서 목차 쪽 번호를 다시 확인한다.
 - 양식은 표지를 0쪽, 목차를 1쪽으로 센다. 20쪽 제한은 표지 포함 PDF 쪽수로 본다.
+
+## 제출본 표지 채우기 (조원 이름은 저장소 밖에서만)
+
+저장소에는 표지가 빈칸인 보고서만 올린다. 제출할 때는 표지 정보 표만 조별 구조(과목명·담당교수·실습일·제출일·조·조원 1~4, 학번 없음)로 바꾼 사본을 따로 만든다.
+
+```bash
+python3 tools/report-builder/fill_cover.py labs/NN_.../report/labNN_..._보고서.docx cover.local.json labNN_..._보고서_표지완성.docx
+```
+
+- `cover.local.json`의 `rows`는 `[칸 이름, 값]` 목록이다. 칸 이름은 `과 목 명`처럼 띄어 쓰면 양식처럼 고르게 퍼진다.
+- 본문·목차·쪽수는 바뀌지 않는다(3회차: 2~17쪽 텍스트 동일 확인).
+- `*.local.json`, `*_표지완성.docx`, `*.hwp`는 `.gitignore`에 들어 있다.
