@@ -71,4 +71,5 @@ python3 tools/report-builder/fill_cover.py labs/NN_.../report/labNN_..._보고�
 
 - `cover.local.json`의 `rows`는 `[칸 이름, 값]` 목록이다. 칸 이름은 `과 목 명`처럼 띄어 쓰면 양식처럼 고르게 퍼진다.
 - 본문·목차·쪽수는 바뀌지 않는다(3회차: 2~17쪽 텍스트 동일 확인).
+- 표가 6줄에서 9줄로 늘어나므로 표 바로 앞 빈 문단 4개를 함께 지운다(29개 → 25개). 지우지 않으면 LibreOffice 미리보기는 멀쩡해도 Word·한글에서는 글꼴 줄 높이가 커서 정보 표가 2쪽으로 밀린다(4회차에서 발견, 3회차 제출본은 Word에서 손으로 25개로 맞춰져 있었음).
 - `*.local.json`, `*_표지완성.docx`, `*.hwp`는 `.gitignore`에 들어 있다.

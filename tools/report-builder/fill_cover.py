@@ -26,6 +26,14 @@ tbl = next(e for e in root.iter(q('tbl')) if '담당교수' in ''.join(x.text or
 old = tbl.findall(q('tr')); proto = copy.deepcopy(old[0])
 for r in old:
     tbl.remove(r)
+# 양식 표(6줄)보다 줄이 3개 많아 Word·한글에서는 표가 2쪽으로 밀린다(LibreOffice 미리보기에서는 안 보임).
+# 3회차 제출본에서 Word로 직접 맞춘 것과 같게 표 바로 앞 빈 문단을 4개 지운다 (29개 → 25개).
+BLANKS_TO_DROP = 4
+prev, dropped = tbl.getprevious(), 0
+while prev is not None and dropped < BLANKS_TO_DROP and prev.tag == q('p') \
+        and not ''.join(x.text or '' for x in prev.iter(q('t'))) and not prev.findall('.//' + q('drawing')):
+    nxt = prev.getprevious(); prev.getparent().remove(prev); prev = nxt; dropped += 1
+assert dropped == BLANKS_TO_DROP, dropped
 for g, w in zip(tbl.find(q('tblGrid')).findall(q('gridCol')), (2835, C2)):
     g.set(q('w'), str(w))
 for label, val in rows_in:
