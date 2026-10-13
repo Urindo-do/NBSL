@@ -90,6 +90,8 @@
 - **혼합비:** 대표 상용 제품 SYLGARD 184는 베이스와 경화제를 **무게비 10 : 1**로 손으로 섞도록 안내한다. 실온 또는 가열로 경화하며, 경화 온도가 높을수록 인장강도·경도·영률이 커진다. [D1]
 - **성질과 용도:** 같은 자료는 SYLGARD 184가 **소수성** PDMS 막을 만들고 소프트 리소그래피(미세유체 칩 등)에 쓰인다고 설명한다. [D1]
   - 주의: 이 제품 페이지에는 투명성과 생체적합성에 대한 문장이 없다. 보고서에 "투명하다"는 사진 관찰로, "생체적합성"은 다른 출처가 있을 때만 쓴다.
+- **굳는 반응 (하이드로실릴화):** SYLGARD 184의 베이스에는 비닐 말단·가지 달린 실록산이, 경화제에는 백금 촉매가 들어 있다. 섞으면 Si–H기와 비닐기가 백금 촉매 아래에서 하이드로실릴화 반응으로 이어져 가교망이 된다. 경화를 빨리 하려고 흔히 높은 온도에서 굳히며, 표준 10 : 1에서 혼합비를 바꾸면 굳은 PDMS의 성질이 달라진다. [D2]
+  - 사진의 베이스 라벨 성분 "Dimethyl siloxane dimethylvinyl-terminated"가 이 비닐 말단 사슬이다.
 - **실습 제품:** 소분 라벨에 원제품명이 없어 SYLGARD 184와 같은 제품인지는 확인하지 못했다. 성분 표기와 무게비 혼합 문구는 같은 계열임을 보여 준다(추정).
 - **PDMS를 몰드로:** 경화된 PDMS는 패턴 복제용 몰드로 쓰인다. 311RM·301RM PUA를 PDMS 몰드 위에 떨어뜨려 복제한 연구가 있다. [M1]
 
@@ -133,6 +135,7 @@
   - 계산 예: 세기가 10 mW/cm²로 일정하면 20초 조사 시 조사량은 200 mJ/cm²다(가정값, [M1]의 조사량과 같은 크기).
   - 같은 조사량이라도 결과가 같다고 보장되지 않는다. 조사량만으로 가교 정도를 다 설명할 수 없고, 파장이 다르면 같은 조사량도 광화학적으로 같지 않다. [P2]
   - 그래서 "몇 분"보다 파장·세기·시간을 함께 기록해야 공정을 재현할 수 있다.
+- **UV-A 안전:** 챔버 패널에 UV-A라고 적혀 있다. UV-A(315–400 nm)는 피부 깊은 층까지 들어간다. 3회차 [U1] 참고.
 - **복제(나노임프린트):** 원판의 오목한 부분은 복제면에서 볼록하게, 볼록한 부분은 오목하게 옮겨져 형상이 서로 반대(상보적)가 된다. 경화 후 PET를 떼는 단계에서는 PUA가 PET에는 붙어 있고 원판과는 떨어져야 한다 [M2]. 3회차 [U3] 나노임프린트 설명과 이어진다.
 
 | 웨이퍼 건조 오븐 (설정 90 °C) | PET 필름 자르기 |
@@ -179,6 +182,8 @@
 | ![](images/06_pua_pattern-600nm.jpg) |
 
 - 사진 확인: 패턴 웨이퍼로 찍은 필름은 직사각형 패턴 부분이 무지개색으로 보이고, 필름에 **"N 600nm"**이라고 적혀 있다. 패턴 간격 600 nm로 보인다(3회차의 "N 600/800" 표시 의문도 이것으로 풀림, 추정). 사진 두 장 모두 확대하면 "N 600nm"로 읽힌다. 팀원 보고서는 "800 nm로 보이는 손글씨"라고 적었는데, 다른 필름(N 800)이었을 수 있다. 우리 조는 플랫으로 만들었으므로 이 필름은 우리 시편이 아니다(비교용). 보고서에는 사진으로 남은 "N 600nm"를 쓴다. 600 nm는 가시광 파장 범위(400–700 nm)라 색이 잘 갈라진다.
+- 계산 `[보충]`: 3회차 회절격자 식 d sin θ = mλ [U4]에 d = 600 nm(표기를 간격으로 가정), 수직 입사, m = 1을 넣으면 400 nm → 41.8°, 500 nm → 56.4°, 600 nm → 90°이고 600 nm보다 긴 빛은 1차 회절이 없다. d = 800 nm면 400 nm → 30.0°, 700 nm → 61.0° (python `math.asin`으로 계산).
+- `[보충]` 세포는 나노 크기의 홈·돌기를 따라 정렬한다(접촉 유도). 수업에서 PCL·PLGA 디스크 한쪽 면에 나노 패턴을 넣는 이유와 이어진다. 3회차 [Z4] 참고.
 
 📷 캡처 필요 #4 — ✅ 오븐·세척병·에어 블로어 (세척하는 손 장면은 없음)
 📷 캡처 필요 #5 — ✅ PET 자르기
@@ -203,6 +208,7 @@
 - **원판(마스터)과 복제**: 비싼 실리콘 웨이퍼 패턴을 PUA로 여러 번 복제해 쓰는 구조 (3회차 나노임프린트와 연결).
 - **원판 상태가 결과를 좌우**: 가장자리가 파손된 웨이퍼는 그 부위 기포가 빠지지 않았다(팀원 관찰). 도포량·롤러만큼 원판 상태 점검이 필요하다.
 - **soft vs hard**: 311RM(320 MPa, 9 %)은 형상을 잘 지키지만 덜 늘어나고, 301RM(20 MPa, 45 %)은 유연하다 [M1]. 이번에는 311RM만 써서 둘을 비교하지는 못했다.
+- **경화 시간과 조사량**: 우리 조는 약 5~10분 쬐었고 문헌은 같은 311RM을 365 nm에서 30초 [M2]. 조사량 = 세기 × 시간이므로 챔버 세기가 약하거나 여유 있게 쬔 것으로 추정. 세기를 재지 않아 조사량은 모름.
 - **생체재료로서**: PCL·PLGA는 생분해성이라 조직공학 지지체에 쓰이지만 [C1], PCL은 소수성이라 세포 부착이 떨어져 표면 처리가 필요할 수 있다 [C2]. 이번 실습에서는 세포 실험을 하지 않았다.
 
 ## 7. 확인 필요 목록
@@ -243,11 +249,10 @@
 
 ## 9. 제출 보고서
 
-- 이 README와 2·3회차 README의 확인된 내용만으로, 3회차와 같은 방식(`report/content.js` → `tools/report-builder/make_cnu.py`, 학교 양식)으로 만들었다. 팀원 docx 초안은 쓰지 않았다.
-- 구성: 1 서론(재료 요약표) → 2 공통 주의사항 → 3 재료별 원리(분류·PDMS·PUA·PCL/PLGA) → 4 PUA 플레이트 제작(원판·기판 준비 / 도포와 밀착 / UV 경화 / 탈형과 후경화 / 나노 패턴) → 5 결과 → 6 고찰(5절) → 7 결론 → 8 참고문헌 14개. 본문 약 10,000자, PDF 16쪽(LibreOffice 기준).
-- 원리 그림 4개(`report/figures/figs.py`): 고분자 분류와 301RM·311RM 문헌값 / PDMS 열경화와 PUA 광경화 / PUA 복제 단면과 조사량 H = E × t / 회절각 계산(d = 600·800 nm 가정).
-- 첫 판(13쪽, 본문 7,000자)은 공정 하나를 3회차의 장비별 틀에 그대로 넣어 내용이 얇았고 사진·표로 쪽을 채운 모양이 되어 다시 썼다. 4장을 공정 단계별 원리로 나누고 2회차의 PDMS 경화·탈포 내용을 이어 썼다.
-- 새로 확인한 출처: [D2] Brounstein 외, Polymers 13(18), 3125 (2021) — SYLGARD 184는 베이스(비닐 말단 실록산)와 경화제(백금 촉매)를 섞으면 Si–H와 비닐기의 하이드로실릴화로 가교, 가열하면 빨라짐, 혼합비를 바꾸면 성질이 바뀜. [D3] Dow 제품 페이지 — 48 h @ 25 °C, 35 min @ 100 °C, 10 min @ 150 °C, 3,500 cps (2026-10-13 원문 확인).
+- 이 README와 2·3회차 README의 확인된 내용만으로 3회차와 같은 방식(`report/content.js` → `tools/report-builder/make_cnu.py`, 학교 양식)으로 만들었다. 팀원 docx 초안은 보고서에 쓰지 않았다(§8은 검토 기록으로만 남김).
+- 구성: 1 서론(재료 요약표) → 2 공통 주의사항 → 3 재료별 원리(분류·PDMS·PUA·PCL/PLGA) → 4 PUA 플레이트 제작(원판·기판 준비 / 도포·밀착 / UV 경화 / 탈형·후경화 / 나노 패턴) → 5 결과 → 6 고찰 5절 → 7 결론 → 8 참고문헌 14개.
+- 원리 그림 4개(`report/figures/figs.py`), 사진 20장(대부분 한 줄 2장). PDF 16쪽(LibreOffice, Noto Sans CJK KR 대체 글꼴 고정). 3회차는 같은 조건 17쪽이 Word에서 20쪽이었으므로 한글에서 쪽수를 꼭 확인한다.
+- 이번에 새로 확인한 출처: [D2] Polymers 2021 (하이드로실릴화), [D3] Dow 제품 페이지 (경화 48 h @ 25 °C, 35 min @ 100 °C, 10 min @ 150 °C, 점도 3500 cps).
 - 검사: check.py PASS, docx validate PASSED, im-not-ai risk_band low, 저장소본 표지·문서 속성에 이름 없음. 표지 완성본은 저장소에 올리지 않는다.
 
 ## 참고 자료
@@ -255,6 +260,7 @@
 모두 원문을 열어 해당 문장을 확인한 출처다.
 
 - [D1] MilliporeSigma, *SYLGARD 184 Silicone Elastomer Kit* (제품 페이지) — https://sigmaaldrich.com/product/aldrich/761036
+- [D3] Dow, *SYLGARD 184 Silicone Elastomer Kit* (제품 페이지) — https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html (경화 48 hr @ 25 °C, 35 min @ 100 °C, 10 min @ 150 °C / 점도 3500 cps)
 - [D2] Brounstein Z., Zhao J., Geller D., Gupta N., Labouriau A., *Long-Term Thermal Aging of Modified Sylgard 184 Formulations*, Polymers 13(18), 3125 (2021) — https://www.mdpi.com/2073-4360/13/18/3125
 - [D3] Dow, *SYLGARD 184 Silicone Elastomer Kit* (제품 페이지) — https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html
 - [C1] Rosalia M. et al., *Investigation on Electrospun and Solvent-Casted PCL-PLGA Blends Scaffolds Embedded with Induced Pluripotent Stem Cells for Tissue Engineering*, Pharmaceutics 15(12), 2736 (2023) — https://doi.org/10.3390/pharmaceutics15122736
@@ -264,4 +270,4 @@
 - [M3] Kim S. M. et al., *Repeated Shape Recovery of Clustered Nanopillars by Mechanical Pulling*, J. Mater. Chem. C, Supporting Information — https://www.rsc.org/suppdata/c6/tc/c6tc02660e/c6tc02660e1.pdf
 - [P1] Lang M., Hirner S., Wiesbrock F., Fuchs P., *A Review on Modeling Cure Kinetics and Mechanisms of Photopolymerization*, Polymers 14(10), 2074 (2022) — https://www.mdpi.com/2073-4360/14/10/2074
 - [P2] Opsytec Dr. Gröbel, *UV Curing and Photopolymerization* — https://www.opsytec.com/uv-applications/uv-processes/uv-curing-photopolymerization
-- 3회차 참고: [U3] UV 나노임프린트, [U4] 회절격자 (labs/03 README)
+- 3회차 참고: [U1] WHO UV, [U3] UV 나노임프린트, [U4] 회절격자, [Z4] 나노 지형과 세포 (labs/03 README)
