@@ -3,7 +3,8 @@
 > 상태: 초안 (전사본 + 영상 7개 + 사진 21장 + 팀원 보고서 초안·수정 요청 반영 + 주인 확인 10-13) / 캡처 자리 10개 모두 완료 (PDMS는 이번에 제작 안 함)
 > 보고서 제출: 조별 1부, 한글 파일, 20쪽 이내, 원리 위주 — 마감 **2026-10-15**
 > 원리 심화 `[보충]`: 재료·PUA 공정 추가 (출처는 맨 아래 참고 자료, 원문 확인 완료)
-> 이번 회차 보고서는 팀원이 만든 docx 초안을 기준으로 하고, 이 README는 근거 기록으로 유지한다
+> 제출 보고서: `report/` (§9)
+> 보고서는 이 기록만 바탕으로 3회차와 같은 방식으로 만들었다 (§9)
 > 주인 확인(10-13): PDMS는 이번에 만들지 않음 / 패턴 웨이퍼가 비싸 패턴 없이(플랫) 제작 / UV 경화기에 5~10분 넣었다가 바로 꺼냄 / 하루 추가 경화는 모름
 
 ## 1. 실습 목적
@@ -240,20 +241,22 @@
 | [3] Opsytec 조사 세기·조사량 | 원문 일치 | 반영 |
 | [4] Newport 회절격자 식 | 페이지 본문이 열리지 않음 | 3회차 [U4] LibreTexts로 대체 권장 |
 
-## 9. 제출 보고서 (이번 회차만 팀원 초안 기반)
+## 9. 제출 보고서
 
-- 팀원이 만든 docx 초안(학교 양식, 13쪽)의 목차·서식·그림을 그대로 두고, 수정 요청과 위 검증 결과를 `report/edit_draft.py`로 반영했다. 목차 쪽 번호는 `report/toc.py`로 렌더 결과에 맞췄다.
-- 결과: `report/lab04_고분자가공_보고서.docx` (표지 조원 칸·문서 작성자 비움), 미리보기 PDF 16쪽 (LibreOffice 기준, 한글에서 1~2쪽 달라질 수 있음).
-- 반영한 사실: 플랫 원판 사용, UV 경화기 약 5~10분, PDMS 미제작, 후경화 방법 미확인, 타이머 40.0 단위 미확인, 비교용 패턴 필름 N 600nm(사진).
-- 참고문헌은 본문 첫 인용 순서로 다시 매겼다: [1] Seong(M1) [2] Lang(P1) [3] Opsytec(P2) [4] SYLGARD 184(D1) [5] Rosalia(C1) [6] Dolatkhahan(C2) [7] Jang(M2) [8] Kim(M3) [9] LibreTexts 회절격자(3회차 U4, Newport 대체).
-- 추가한 그림: 3-2 (c)(d) 세척병·에어 블로어, 3-3 피펫 도포(새 그림, 이후 3-4·3-5로 번호 이동), 4-3 플랫 필름·비교용 패턴 필름.
-- 검사: docx validate PASSED, 초안 표시 0, 인용 1~9 모두 사용, im-not-ai risk_band low (팀원 초안도 low).
+- 이 README와 2·3회차 README의 확인된 내용만으로, 3회차와 같은 방식(`report/content.js` → `tools/report-builder/make_cnu.py`, 학교 양식)으로 만들었다. 팀원 docx 초안은 쓰지 않았다.
+- 구성: 1 서론(재료 요약표) → 2 공통 주의사항 → 3 재료별 원리(분류·PDMS·PUA·PCL/PLGA) → 4 PUA 플레이트 제작(원판·기판 준비 / 도포와 밀착 / UV 경화 / 탈형과 후경화 / 나노 패턴) → 5 결과 → 6 고찰(5절) → 7 결론 → 8 참고문헌 14개. 본문 약 10,000자, PDF 16쪽(LibreOffice 기준).
+- 원리 그림 4개(`report/figures/figs.py`): 고분자 분류와 301RM·311RM 문헌값 / PDMS 열경화와 PUA 광경화 / PUA 복제 단면과 조사량 H = E × t / 회절각 계산(d = 600·800 nm 가정).
+- 첫 판(13쪽, 본문 7,000자)은 공정 하나를 3회차의 장비별 틀에 그대로 넣어 내용이 얇았고 사진·표로 쪽을 채운 모양이 되어 다시 썼다. 4장을 공정 단계별 원리로 나누고 2회차의 PDMS 경화·탈포 내용을 이어 썼다.
+- 새로 확인한 출처: [D2] Brounstein 외, Polymers 13(18), 3125 (2021) — SYLGARD 184는 베이스(비닐 말단 실록산)와 경화제(백금 촉매)를 섞으면 Si–H와 비닐기의 하이드로실릴화로 가교, 가열하면 빨라짐, 혼합비를 바꾸면 성질이 바뀜. [D3] Dow 제품 페이지 — 48 h @ 25 °C, 35 min @ 100 °C, 10 min @ 150 °C, 3,500 cps (2026-10-13 원문 확인).
+- 검사: check.py PASS, docx validate PASSED, im-not-ai risk_band low, 저장소본 표지·문서 속성에 이름 없음. 표지 완성본은 저장소에 올리지 않는다.
 
 ## 참고 자료
 
 모두 원문을 열어 해당 문장을 확인한 출처다.
 
 - [D1] MilliporeSigma, *SYLGARD 184 Silicone Elastomer Kit* (제품 페이지) — https://sigmaaldrich.com/product/aldrich/761036
+- [D2] Brounstein Z., Zhao J., Geller D., Gupta N., Labouriau A., *Long-Term Thermal Aging of Modified Sylgard 184 Formulations*, Polymers 13(18), 3125 (2021) — https://www.mdpi.com/2073-4360/13/18/3125
+- [D3] Dow, *SYLGARD 184 Silicone Elastomer Kit* (제품 페이지) — https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html
 - [C1] Rosalia M. et al., *Investigation on Electrospun and Solvent-Casted PCL-PLGA Blends Scaffolds Embedded with Induced Pluripotent Stem Cells for Tissue Engineering*, Pharmaceutics 15(12), 2736 (2023) — https://doi.org/10.3390/pharmaceutics15122736
 - [C2] Dolatkhahan M., Peiravi M., Sherafat Z., *Morphology and Mechanical Properties of 3D Porous PLA/PCL Scaffolds*, Iranian Journal of Materials Forming 11(3), 21–27 (2024) — https://ijmf.shirazu.ac.ir/article_7767_7a5e5afabc0729125185e581023f9bf5.pdf
 - [M1] Seong M., Park H.-H., Hwang I., Jeong H. E., *Strong and Reversible Adhesion of Interlocked 3D-Microarchitectures*, Coatings 9(1), 48 (2019) — https://www.mdpi.com/2079-6412/9/1/48
