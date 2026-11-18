@@ -49,7 +49,7 @@ for i, (t, d, st) in enumerate(steps):
     ax.text(x + w / 2, 2.8, d, ha='center', va='center', fontsize=8.3)
     if i < 5:
         arrow(ax, x + w + 0.03, 3.15, x + w + gap - 0.03, 3.15, ms=9)
-ax.text(0.2 + w / 2, 1.45, '6회차 + 이번에 반복', ha='center', fontsize=8.8, color=ORG)
+ax.text(0.2 + w / 2, 1.45, '지난 실습 + 이번에 반복', ha='center', fontsize=8.8, color=ORG)
 ax.text(0.2 + (w + gap) + (2 * w + gap) / 2, 1.45, '이번 실습', ha='center', fontsize=9.5, color=ORG, fontweight='bold')
 ax.annotate('', xy=(0.2 + w + gap + 0.1, 1.85), xytext=(0.2 + 2 * (w + gap) + w - 0.1, 1.85),
             arrowprops=dict(arrowstyle='-', color=ORG, lw=1.5))
